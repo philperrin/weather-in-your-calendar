@@ -32,9 +32,9 @@ if (isset($_GET['temperature'])) {
 
 // Loading json
 if (isset($zip)) {
-  $string = file_get_contents("http://api.openweathermap.org/data/2.5/forecast/daily?zip=" . $zip . "," . $country_code . "&units=" . $units . "&cnt=16&appid=" . $appkey);
+  $string = file_get_contents("http://api.openweathermap.org/data/3.0/forecast/daily?zip=" . $zip . "," . $country_code . "&units=" . $units . "&cnt=16&appid=" . $appkey);
 } else {
-  $string = file_get_contents("http://api.openweathermap.org/data/2.5/forecast/daily?q=" . $city . "&units=" . $units . "&cnt=16&appid=" . $appkey);
+  $string = file_get_contents("http://api.openweathermap.org/data/3.0/forecast/daily?q=" . $city . "&units=" . $units . "&cnt=16&appid=" . $appkey);
 }
 $json = json_decode($string, true);
 
