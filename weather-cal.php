@@ -31,11 +31,7 @@ if (isset($_GET['temperature'])) {
 }
 
 // Loading json
-if (isset($zip)) {
-  $string = file_get_contents("https://api.openweathermap.org/data/2.5/forecast?zip=" . $zip . "," . $country_code . "&units=" . $units . "&cnt=16&appid=" . $appkey);
-} else {
-  $string = file_get_contents("https://api.openweathermap.org/data/2.5/forecast?q=" . $city . "&units=" . $units . "&cnt=16&appid=" . $appkey);
-}
+$string = file_get_contents("https://raw.githubusercontent.com/philperrin/weather-in-your-calendar/master/sample.json");
 $json = json_decode($string, true);
 
 // Setting ical header
